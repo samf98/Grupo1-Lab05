@@ -10,5 +10,6 @@ class Bloqueados: public Contactos{
 		int cantidad_odio;
 	public:
 		Bloqueados(string name,string correoElec,int numero, int cantidad_odio);
+		virtual ~Bloqueados();
 		virtual string toString()const;
 };

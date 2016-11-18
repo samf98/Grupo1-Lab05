@@ -8,7 +8,7 @@ class Amigo : public Contactos{
 
 	public:
 		Amigo(string name,string correoElec,int numero,int nivel);
-		
+		virtual ~Amigo();
 		virtual string tostring() const;
 };
 #endif

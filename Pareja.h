@@ -11,6 +11,7 @@ class Pareja : public Contactos{
 	public:
 		Pareja(string name,string correoElec,int numero,string date);
 		//fecha en la que comenzaron a salir
+		virtual ~Pareja();
 		virtual string tostring() const;
 
 };
