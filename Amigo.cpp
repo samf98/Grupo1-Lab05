@@ -9,8 +9,8 @@ void Amigo::imprimir(){
 	cout << "Esta es una instancia de un Amigo" << endl;
 }
 
-Amigo::Amigo(){
-	nivel = 0;
+Amigo::Amigo(int level){
+	nivel = level;
 }
 
 int Amigo::getNivel(){return nivel;}

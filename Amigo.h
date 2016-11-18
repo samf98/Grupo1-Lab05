@@ -2,7 +2,7 @@
 #define AMIGO_H
 #include "Contacto.h"
 
-class Amigo : public Categoria{
+class Amigo : public Contacto{
 	private:
 		int nivel;
 
