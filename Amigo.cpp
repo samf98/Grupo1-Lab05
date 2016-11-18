@@ -13,8 +13,6 @@ Amigo::Amigo(string name,string correoElec,int numero,int nivel):Contactos(name,
   this->nivel = nivel;
 }
 
-Amigo::~Amigo(){
-}
 
 string Amigo::tostring()const{
 	stringstream ss;
