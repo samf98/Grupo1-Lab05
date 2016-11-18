@@ -7,8 +7,6 @@ using std::string;
 using std::stringstream;
 
 
-Familiares::Familiares(){
-}
 
 Familiares::Familiares(string name,string correoElec,int numero,string relacionFam):Contactos(name,correoElec,numero){
 	this->relacionFam=relacionFam;

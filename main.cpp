@@ -12,21 +12,22 @@
 
 using namespace std;
 
-void eliminarContacto(vector<Contactos>,int);
-void escribirArchivo(vector<Contactos>);
-void escogerCategoria(vector<Contactos>);
-void liberarEspacio(vector<Contactos>);
+void menu(vector<Contactos*>);
+void eliminarContacto(vector<Contactos*>,int);
+void escribirArchivo(vector<Contactos*>);
+void escogerCategoria(int,vector<Contactos*>);
+void liberarEspacio(vector<Contactos*>);
 
 int main()
 {
 
-	vector<Contactos> contactos;
-	menu(categorias);
+	vector<Contactos*> contactos;
+	menu(contactos);
 
 
 }
 
-void menu(vector<Contactos> contactos)
+void menu(vector<Contactos*> contactos)
 {
 	int op = 0;
 	do
@@ -41,7 +42,7 @@ void menu(vector<Contactos> contactos)
 				cout<<"3-Companero de Trabajo"<<endl<<"4-Companero de Clase"<<endl<<"Familiar"<<endl<<"Amante"<<endl<<"Bloqueado"<<endl;
 				int cat;
 				cin>>cat;
-				escogerCategoria(cat);
+				escogerCategoria(cat,contactos);
 				break;
 			}
 
@@ -56,20 +57,21 @@ void menu(vector<Contactos> contactos)
 
 			case 3:
 			{
-				escribirArchivo();
+				escribirArchivo(contactos);
 				break;
 			}
 		}
 	}while(op == 0);
 }
 
-void escogerCategoria(int cat, vector<Contactos> contactos )
+void escogerCategoria(int cat, vector<Contactos*> contactos)
 {
 	string nombre;
 	string email;
-	string telefono;
+	int telefono;
 	cout<<"Ingrese su nombre: ";
-	cin.getline(nombre,500,'n');
+	cin.ignore();
+	getline(cin,nombre, "/n");
 	cout<< "Ingrese su email: ";
 	cin>>email;
 	cout<<"Ingrese su telefono: ";
@@ -77,7 +79,7 @@ void escogerCategoria(int cat, vector<Contactos> contactos )
 	int cont = 0;
 	for (int i = 0; i < contactos.size(); ++i)
 	{
-		if(categorias[i]->gettelefono() == telefono)
+		if(contactos.at(i)->gettelefono() == telefono)
 			cont++;
 	}
 	if(cont==0){
@@ -90,7 +92,7 @@ void escogerCategoria(int cat, vector<Contactos> contactos )
 				cin>>nivel_a;
 				if(nivel_a>=1&&nivel_a<=100)
 				{
-					Contactos* amigo = new Amigo(nivel_a);
+					Contactos* amigo = new Amigo(nombre,email,telefono,nivel_a);
 
 					contactos.push_back(amigo);
 				}
@@ -104,7 +106,7 @@ void escogerCategoria(int cat, vector<Contactos> contactos )
 				string fecha_pareja;
 				cout<<"Ingrese la fecha: ";
 				cin>> fecha_pareja;
-				Contactos* pareja = new Pareja(fecha_pareja);
+				Contactos* pareja = new Pareja(nombre,email,telefono,fecha_pareja);
 				contactos.push_back(pareja);
 				break;
 			}
@@ -114,17 +116,17 @@ void escogerCategoria(int cat, vector<Contactos> contactos )
 				string departamento;
 				cout<<"Ingrese departamento en el que trabaja: ";
 				cin>>departamento;
-				Contactos* companero_t = new Trabajo(departamento);
+				Contactos* companero_t = new Trabajo(nombre,email,telefono,departamento);
 				contactos.push_back(companero_t);
 				break;
 			}
 
 			case 4:
 			{
-				stirng clase;
+				string clase;
 				cout<<"Ingrese la clase: ";
 				cin>> clase;
-				Contactos* companero_c = new ComClase(clase);
+				Contactos* companero_c = new ComClase(nombre,email,telefono,clase);
 				contactos.push_back(companero_c);
 				break;
 			}
@@ -134,7 +136,7 @@ void escogerCategoria(int cat, vector<Contactos> contactos )
 				string relacion;
 				cout<<"Ingrese la relación familiar: ";
 				cin>> relacion;
-				Companeros* familia = new Familiares(relacion);
+				Contactos* familia = new Familiares(nombre,email,telefono,relacion);
 				contactos.push_back(familia);
 				break;
 			}
@@ -144,7 +146,7 @@ void escogerCategoria(int cat, vector<Contactos> contactos )
 				string horario;
 				cout<<"Ingrese horas disponibles: ";
 				cin>> horario;
-				Companeros* amantes = new Amantes(horario);
+				Contactos* amantes = new Amantes(nombre,email,telefono,horario);
 				contactos.push_back(amantes);
 				break;
 			}
@@ -156,7 +158,7 @@ void escogerCategoria(int cat, vector<Contactos> contactos )
 				cin>> odio;
 				if(odio>=1&&odio<=100)
 				{
-					Companeros* bloqueados = new Bloqueados(odio);
+					Contactos* bloqueados = new Bloqueados(nombre,email,telefono,odio);
 					contactos.push_back(bloqueados);
 				}
 				else
@@ -169,85 +171,85 @@ void escogerCategoria(int cat, vector<Contactos> contactos )
 		cout<<"Número no válido"<<endl;
 }
 
-void eliminarContacto(vector<Contactos> contactos, int posicion)
+void eliminarContacto(vector<Contactos*> contactos, int posicion)
 {
 	contactos.erase(contactos.begin()+posicion);
 }
 
-void escribirArchivo(vector<Contactos> contactos)
+void escribirArchivo(vector<Contactos*> contactos)
 {
 	cout<<"Amigos:"<<endl;
-	Amigo amigos;
+	Amigo* amigos;
 	for (int i = 0; i < contactos.size(); ++i)
 	{
-		amigos = dynamic_cast<Amigo*>(contactos[i]) toString();
+		amigos = dynamic_cast<Amigo*>(contactos.at(i))-> toString();
 
-		if(amigos!=null)
+		if(amigos!=NULL)
 			amigos -> toString();
 	}
 
 	cout<<"Pareja:"<<endl;
-	Paerja pareja;
+	Pareja* pareja;
 	for (int i = 0; i < contactos.size(); ++i)
 	{
-		pareja = dynamic_cast<Pareja*>(contactos[i]) toString();
+		pareja = dynamic_cast<Pareja*>(contactos.at(i))-> toString();
 
-		if(pareja!=null)
+		if(pareja!=NULL)
 			pareja -> toString();
 	}
 
 	cout<<"Compañeros de Trabajo:"<<endl;
-	Trabajo trabajo;;
+	Trabajo* trabajo;;
 	for (int i = 0; i < contactos.size(); ++i)
 	{
-		trabajo = dynamic_cast<Trabajo*>(contactos[i]) toString();
+		trabajo = dynamic_cast<Trabajo*>(contactos.at(i))-> toString();
 
-		if(trabajo!=null)
+		if(trabajo!=NULL)
 			trabajo -> toString();
 	}
 
 	cout<<"Compañeros de Clase:"<<endl;
-	ComClase comclase;
+	ComClase* comclase;
 	for (int i = 0; i < contactos.size(); ++i)
 	{
-		comclase = dynamic_cast<ComClase*>(contactos[i]) toString();
+		comclase = dynamic_cast<ComClase*>(contactos.at(i))-> toString();
 
-		if(comclase!=null)
+		if(comclase!=NULL)
 			comclase -> toString();
 	}
 
 	cout<<"Familiares:"<<endl;
-	Familiares familiares;
+	Familiares* familiares;
 	for (int i = 0; i < contactos.size(); ++i)
 	{
-		familiares = dynamic_cast<Familiares*>(contactos[i]) toString();
+		familiares = dynamic_cast<Familiares*>(contactos.at(i))-> toString();
 
-		if(familiares!=null)
+		if(familiares!=NULL)
 			familiares -> toString();
 	}
 
 	cout<<"Amantes:"<<endl;
-	Amantes amantes;
+	Amantes* amantes;
 	for (int i = 0; i < contactos.size(); ++i)
 	{
-		amantes = dynamic_cast<Amantes*>(contactos[i]) toString();
+		amantes = dynamic_cast<Amantes*>(contactos.at(i))-> toString();
 
-		if(amantes!=null)
+		if(amantes!=NULL)
 			amantes -> toString();
 	}
 
 	cout<<"Bloqueados:"<<endl;
-	Bloqueados bloqueados;
+	Bloqueados* bloqueados;
 	for (int i = 0; i < contactos.size(); ++i)
 	{
-		bloqueados = dynamic_cast<Bloqueados*>(contactos[i]) toString();
+		bloqueados = dynamic_cast<Bloqueados*>(contactos.at(i))-> toString();
 
-		if(bloqueados!=null)
+		if(bloqueados!=NULL)
 			bloqueados -> toString();
 	}
 }
 
-void liberarEspacio(vecto<Contactos> contactos)
+void liberarEspacio(vector<Contactos*> contactos)
 {
-	
+
 }

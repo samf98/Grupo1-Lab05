@@ -10,6 +10,7 @@ class ComClase : public Contactos{
 
 	public:
 		Comclase(string name,string correoElec,int numero,string claseConocieron);
+
 		
 		virtual string tostring() const;
 };

@@ -10,6 +10,7 @@ class Trabajo : public Contactos{
 
 	public:
 		Trabajo(string name,string correoElec,int numero,string departamento);
+
 		
 		virtual string tostring() const;
 };

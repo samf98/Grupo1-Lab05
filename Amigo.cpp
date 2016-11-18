@@ -7,7 +7,9 @@ using std::cin;
 using std::string;
 using std::stringstream;
 
+
 Amigo::Amigo(string name,string correoElec,int numero,int nivel):Contactos(name,correoElec,numero){
+
   this->nivel = nivel;
 }
 

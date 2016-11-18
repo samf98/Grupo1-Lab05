@@ -7,10 +7,8 @@ using std::string;
 using std::stringstream;
 
 
-Bloqueados::Bloqueados(){
-}
-
-Bloqueados::Bloqueados(int cantidad_odio,string name,string direccion,string correoElec,int numero):Contactos(name,direccion,correoElec,numero),name(name),direccion(direccion), correoElec(correoElec), numero(numero){
+Amantes::Amantes(string name,string correoElec,int numero,int cantidad_odio):Contactos(name,direccion,correoElec,numero){
+  this->cantidad_odio = cantidad_odio;
 }
 
 Bloqueados::~Bloqueados(){
@@ -18,6 +16,6 @@ Bloqueados::~Bloqueados(){
 
 string Bloqueados::toString()const{
 	stringstream ss;
-	ss << "Nivel de Odio: " << cantidad_odio;
+	ss << Contactos::toString()<<" Nivel de Odio: " << cantidad_odio;
 	return ss.str();
 }
