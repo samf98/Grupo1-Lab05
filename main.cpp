@@ -183,7 +183,7 @@ void escribirArchivo(vector<Contactos*> contactos)
 		Amigo* amigos = dynamic_cast<Amigo*>(contactos.at(i));
 
 		if(amigos!=NULL)
-			amigos -> toString();
+			cout<<amigos -> toString()<<endl;
 	}
 
 	cout<<"Pareja:"<<endl;
@@ -192,7 +192,7 @@ void escribirArchivo(vector<Contactos*> contactos)
 		Pareja* pareja = dynamic_cast<Pareja*>(contactos.at(i));
 
 		if(pareja!=NULL)
-			pareja -> toString();
+			cout<<pareja -> toString()<<endl;
 	}
 
 	cout<<"Compañeros de Trabajo:"<<endl;
@@ -201,7 +201,7 @@ void escribirArchivo(vector<Contactos*> contactos)
 		Trabajo* trabajo = dynamic_cast<Trabajo*>(contactos.at(i));
 
 		if(trabajo!=NULL)
-			trabajo -> toString();
+			cout<<trabajo -> toString()<<endl;
 	}
 
 	cout<<"Compañeros de Clase:"<<endl;
@@ -210,7 +210,7 @@ void escribirArchivo(vector<Contactos*> contactos)
 		ComClase* comclase = dynamic_cast<ComClase*>(contactos.at(i));
 
 		if(comclase!=NULL)
-			comclase -> toString();
+			cout<<comclase -> toString()<<endl;
 	}
 
 	cout<<"Familiares:"<<endl;
@@ -219,7 +219,7 @@ void escribirArchivo(vector<Contactos*> contactos)
 		Familiares* familiares = dynamic_cast<Familiares*>(contactos.at(i));
 
 		if(familiares!=NULL)
-			familiares -> toString();
+			cout<<familiares -> toString()<<endl;
 	}
 
 	cout<<"Amantes:"<<endl;
@@ -228,7 +228,7 @@ void escribirArchivo(vector<Contactos*> contactos)
 		Amantes* amantes = dynamic_cast<Amantes*>(contactos.at(i));
 
 		if(amantes!=NULL)
-			amantes -> toString();
+			cout<< amantes -> toString()<<endl;
 	}
 
 	cout<<"Bloqueados:"<<endl;
@@ -237,7 +237,7 @@ void escribirArchivo(vector<Contactos*> contactos)
 		Bloqueados* bloqueados = dynamic_cast<Bloqueados*>(contactos.at(i));
 
 		if(bloqueados!=NULL)
-			bloqueados -> toString();
+			cout<<bloqueados -> toString()<<endl;
 	}
 }
 
