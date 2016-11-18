@@ -5,7 +5,7 @@
 using std::string;
 using std::stringstream;
 
-Contactos::Contactos(string name,string correoElec,int numero):name(name), direccion(direccion), correoElec(correoElec), numero(numero){
+Contactos::Contactos(string name,string correoElec,int numero):name(name),correoElec(correoElec), numero(numero){
 }
 
 
@@ -14,7 +14,7 @@ Contactos::~Contactos(){
 
 string Contactos::toString()const{
 	stringstream ss;
-	ss << "Contactos: " << name << ", " << direccion << ", " << correoElec<< ", "<<numero;
+	ss << "Contactos: " << name << ", " << correoElec<< ", "<<numero;
 	return ss.str();
 }
 
