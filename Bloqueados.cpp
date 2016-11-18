@@ -7,7 +7,7 @@ using std::string;
 using std::stringstream;
 
 
-Amantes::Amantes(string name,string correoElec,int numero,int cantidad_odio):Contactos(name,direccion,correoElec,numero){
+Amantes::Amantes(string name,string correoElec,int numero,int cantidad_odio):Contactos(name,correoElec,numero){
   this->cantidad_odio = cantidad_odio;
 }
 

@@ -5,7 +5,7 @@
 using std::endl;
 using std::cout;
 
-Trabajo::Trabajo(string name,string correoElec,int numero,string departamento):Contactos(name,direccion,correoElec,numero){
+Trabajo::Trabajo(string name,string correoElec,int numero,string departamento):Contactos(name,correoElec,numero){
   this->departamento = departamento;
 }
 

@@ -15,6 +15,7 @@ Contactos::~Contactos(){
 string Contactos::toString()const{
 	stringstream ss;
 	ss << "Contactos: " << name << ", " << correoElec<< ", "<<numero;
+	cout<<"Contactos: " << name << ", " << correoElec<< ", "<<numero;
 	return ss.str();
 }
 

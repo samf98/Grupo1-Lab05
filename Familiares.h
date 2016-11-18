@@ -9,7 +9,7 @@ class Familiares: public Contactos{
 	private:
 		string relacionFam;
 	public:
-		Familiares(string name,string direccion,string correoElec,int numero,string relacionFam);
+		Familiares(string name,string correoElec,int numero,string relacionFam);
 
 		virtual string toString()const;
 };
