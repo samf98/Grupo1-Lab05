@@ -54,7 +54,7 @@ void menu(vector<Contactos> contactos)
 
 			case 3:
 			{
-
+				escribirArchivo();
 				break;
 			}
 		}
@@ -155,5 +155,5 @@ void eliminarContacto(vector<Contactos> contactos, int posicion)
 
 void escribirArchivo(vector<Contactos> contactos)
 {
-
+	cout<<"LOL"<<endl;
 }
