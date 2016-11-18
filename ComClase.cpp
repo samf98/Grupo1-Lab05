@@ -12,3 +12,7 @@ void Comclase::imprimir(){
 Comclase::Comclase(string pClase){
 	claseConocieron = pClase;
 }
+
+Comclase::Comclase(string name,string direccion,string correoElec,int numero,string claseConocieron):Contactos(name,direccion,correoElec,numero){
+  this->departamento = departamento;
+}

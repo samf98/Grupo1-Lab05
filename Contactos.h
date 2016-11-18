@@ -3,9 +3,10 @@
 using std::string;
 
 class Contactos{
+  private:	
 	string name,direccion;
-	int numero;
 	string correoElec;
+	int numero;
   public:
 	Contactos(string, string, string,int=0);
 	virtual ~Contactos();

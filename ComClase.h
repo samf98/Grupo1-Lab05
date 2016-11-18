@@ -9,9 +9,11 @@ class ComClase : public Contactos{
 		string claseConocieron;
 
 	public:
-		ComClase(string);
+		Comclase(string name,string direccion,string correoElec,int numero,string claseConocieron);
 		virtual void imprimir();
 		void setClaseConocieron();
 		string getClaseConocieron();
 
-}
+};
+
+#endif

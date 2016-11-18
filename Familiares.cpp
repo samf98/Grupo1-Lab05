@@ -1,3 +1,4 @@
+#include "Contactos.h"
 #include "Familiares.h"
 
 #include <string>
@@ -9,10 +10,8 @@ using std::stringstream;
 Familiares::Familiares(){
 }
 
-Familiares::Familiares(string relacionFam,string name,string direccion,string correoElec,int numero):Contactos(name,direccion,correoElec,numero),name(name),direccion(direccion), correoElec(correoElec), numero(numero){
-}
-
-Student::~Student(){
+Familiares::Familiares(string name,string direccion,string correoElec,int numero,string relacionFam):Contactos(name,direccion,correoElec,numero){
+	this->relacionFam=relacionFam;
 }
 
 Familiares::~Familiares(){
