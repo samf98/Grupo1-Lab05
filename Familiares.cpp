@@ -10,7 +10,7 @@ using std::stringstream;
 Familiares::Familiares(){
 }
 
-Familiares::Familiares(string name,string direccion,string correoElec,int numero,string relacionFam):Contactos(name,direccion,correoElec,numero){
+Familiares::Familiares(string name,string correoElec,int numero,string relacionFam):Contactos(name,correoElec,numero){
 	this->relacionFam=relacionFam;
 }
 
@@ -19,6 +19,6 @@ Familiares::~Familiares(){
 
 string Familiares::toString()const{
 	stringstream ss;
-	ss << "Relacion familiar: " << relacionFam;
+	ss << Contactos::toString() << "Relacion familiar: " << relacionFam;
 	return ss.str();
 }

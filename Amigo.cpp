@@ -4,15 +4,18 @@
 using std::endl;
 using std::cout;
 using std::cin;
+using std::string;
+using std::stringstream;
 
-Amigo::Amigo(string name,string direccion,string correoElec,int numero,int nivel):Contactos(name,direccion,correoElec,numero){
+Amigo::Amigo(string name,string correoElec,int numero,int nivel):Contactos(name,correoElec,numero){
   this->nivel = nivel;
 }
 
-void Amigo::imprimir(){
-	cout << "Esta es una instancia de un Amigo" << endl;
+Amigo::~Amigo(){
 }
 
-int Amigo::getNivel(){
-	return nivel;
+string Amigo::toString()const{
+	stringstream ss;
+	ss <<Contactos::toString()<< "Nivel de amigo: " << nivel;
+	return ss.str();
 }

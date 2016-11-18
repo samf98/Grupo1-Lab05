@@ -3,12 +3,18 @@
 
 using std::cout;
 using std::endl; 
+using std::string;
+using std::stringstream;
 
-void Pareja::imprimir(){
-	cout << "Esta es una instancia de Pareja" << endl;
+Pareja::Pareja(string name,string correoElec,int numero,string date):Contactos(name,correoElec,numero){
+this -> date = date;
+}
 
-} 
+Pareja::~Pareja(){
+}
 
-Pareja::Pareja(string monamie){
-	date = monamie;
+string Pareja::tostring()const{
+	stringstream ss;
+	ss <<Contactos::tostring() << "Fecha en la que comenzaron a salir: " << endl;
+	return ss.str();
 }

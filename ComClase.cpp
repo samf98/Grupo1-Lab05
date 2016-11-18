@@ -3,16 +3,19 @@
 
 using std::endl;
 using std::cout;
+using std::string;
+using std::stringstream;
 
-void Comclase::imprimir(){
-	cout << "Esta es una instancia de Comclase" << endl;
 
-}
-
-Comclase::Comclase(string pClase){
-	claseConocieron = pClase;
-}
-
-Comclase::Comclase(string name,string direccion,string correoElec,int numero,string claseConocieron):Contactos(name,direccion,correoElec,numero){
+Comclase::Comclase(string name,string correoElec,int numero,string claseConocieron):Contactos(name,correoElec,numero){
   this->departamento = departamento;
+}
+
+Comclase::~Comclase(){
+}
+
+string Comclase::tostring()const{
+	stringstream ss;
+	ss << Contactos::tostring() << "Clase en la que se conocieron: " << endl;
+	return ss.str();
 }
