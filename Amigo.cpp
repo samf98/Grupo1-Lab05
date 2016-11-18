@@ -5,7 +5,7 @@ using std::endl;
 using std::cout;
 using std::cin;
 
-Amigo::Amigo(string name,string direccion,string correoElec,int numero,int nivel):Contactos(name,direccion,correoElec,numero){
+Amigo::Amigo(string name,string correoElec,int numero,int nivel):Contactos(name,direccion,correoElec,numero){
   this->nivel = nivel;
 }
 

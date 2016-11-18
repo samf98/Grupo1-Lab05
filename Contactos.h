@@ -3,13 +3,12 @@
 using std::string;
 
 class Contactos{
-  protected:	
+  private:	
 	string name;
-	string direccion;
 	string correoElec;
 	int numero;
   public:
-	Contactos(string, string, string,int=0);
+	Contactos(string,string,int=0);
 	virtual ~Contactos();
 	virtual string toString()const;
 };

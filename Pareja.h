@@ -9,7 +9,7 @@ class Pareja : public Contactos{
 		string date;
 
 	public:
-		Pareja(string);
+		Pareja(string name,string correoElec,int numero,string date);
 		//fecha en la que comenzaron a salir
 		virtual void imprimir();
 		void setDate(string);
