@@ -9,7 +9,8 @@ using std::stringstream;
 Amantes::Amantes(string name,string correoElec,int numero,string horario):Contactos(name,correoElec,numero){
   this->horario = horario;
 }
-
+Amantes::~Amantes(){
+}
 
 string Amantes::toString()const{
 	stringstream ss;

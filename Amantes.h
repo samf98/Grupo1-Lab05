@@ -10,5 +10,6 @@ class Amantes: public Contactos{
 		string horario;
 	public:
 		Amantes(string name,string correoElec,int numero,string horario);
+		virtual ~Amantes();
 		virtual string toString()const;
 };

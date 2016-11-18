@@ -10,6 +10,6 @@ class Familiares: public Contactos{
 		string relacionFam;
 	public:
 		Familiares(string name,string correoElec,int numero,string relacionFam);
-
+		virtual ~Familiares();
 		virtual string toString()const;
 };
