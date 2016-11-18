@@ -1,3 +1,4 @@
+#include "Contacto.h"
 #include "Familiares.h"
 
 #include <string>
@@ -10,9 +11,6 @@ Familiares::Familiares(){
 }
 
 Familiares::Familiares(string relacionFam,string name,string direccion,string correoElec,int numero):Contactos(name,direccion,correoElec,numero),name(name),direccion(direccion), correoElec(correoElec), numero(numero){
-}
-
-Student::~Student(){
 }
 
 Familiares::~Familiares(){

@@ -1,3 +1,4 @@
+#include "Contactos.h"
 #include "Amantes.h"
 
 #include <string>
@@ -5,18 +6,10 @@
 using std::string;
 using std::stringstream;
 
-
-Amantes::Amantes(){
+Amantes::Amantes(string name,string direccion,string correoElec,int numero,string horario):Contactos(name,direccion,correoElec,numero){
+  this->horario = horario;
 }
 
-Amantes::Amantes(string horario,string name,string direccion,string correoElec,int numero):Contactos(name,direccion,correoElec,numero),name(name),direccion(direccion), correoElec(correoElec), numero(numero){
-}
-
-Student::~Student(){
-}
-
-Amantes::~Amantes(){
-}
 
 string Amantes::toString()const{
 	stringstream ss;

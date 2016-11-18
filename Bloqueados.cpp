@@ -1,3 +1,4 @@
+#include "Contacto.h"
 #include "Bloqueados.h"
 
 #include <string>
@@ -10,9 +11,6 @@ Bloqueados::Bloqueados(){
 }
 
 Bloqueados::Bloqueados(int cantidad_odio,string name,string direccion,string correoElec,int numero):Contactos(name,direccion,correoElec,numero),name(name),direccion(direccion), correoElec(correoElec), numero(numero){
-}
-
-Student::~Student(){
 }
 
 Bloqueados::~Bloqueados(){
