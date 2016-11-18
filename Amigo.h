@@ -1,13 +1,13 @@
 #ifndef AMIGO_H
 #define AMIGO_H
-#include "Contacto.h"
+#include "Contactos.h"
 
-class Amigo : public Contacto{
+class Amigo : public Contactos{
 	private:
 		int nivel;
 
 	public:
-		Amigo();
+		Amigo(int);
 		virtual void imprimir();
 		int getNivel();
 };
