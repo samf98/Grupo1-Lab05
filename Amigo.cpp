@@ -15,7 +15,7 @@ Amigo::Amigo(string name,string correoElec,int numero,int nivel):Contactos(name,
 Amigo::~Amigo(){
 }
 
-string Amigo::toString()const{
+string Amigo::tostring()const{
 	stringstream ss;
 	ss <<Contactos::toString()<< "Nivel de amigo: " << nivel;
 	return ss.str();
