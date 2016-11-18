@@ -1,4 +1,4 @@
-#include "Contactos.h"
+#include <sstream>
 #include "Comclase.h"
 #include <iostreams>
 

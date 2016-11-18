@@ -1,5 +1,6 @@
 #include "Amigo.h"
 #include <iostream>
+#include <sstream>
 
 using std::endl;
 using std::cout;

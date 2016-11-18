@@ -1,5 +1,6 @@
 #include "Pareja.h"
 #include <iostream>
+#include <sstream>
 
 using std::cout;
 using std::endl; 
