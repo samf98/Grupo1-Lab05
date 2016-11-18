@@ -9,7 +9,7 @@ class Trabajo : public Contactos{
 		string departamento;
 
 	public:
-		Trabajo(string name,string direccion,string correoElec,int numero,string departamento);
+		Trabajo(string name,string correoElec,int numero,string departamento);
 		virtual void imprimir();
 		void setDepartamento();
 		string getDepartamento(); 

@@ -4,11 +4,11 @@ using std::string;
 
 class Contactos{
   private:	
-	string name,direccion;
+	string name;
 	string correoElec;
 	int numero;
   public:
-	Contactos(string, string, string,int=0);
+	Contactos(string,string,int=0);
 	virtual ~Contactos();
 	virtual string toString()const;
 };

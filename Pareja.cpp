@@ -4,7 +4,7 @@
 using std::cout;
 using std::endl; 
 
-Pareja::Pareja(string name,string direccion,string correoElec,int numero,string date):Contactos(name,direccion,correoElec,numero){
+Pareja::Pareja(string name,string correoElec,int numero,string date):Contactos(name,direccion,correoElec,numero){
   this->date = date;
 }
 

@@ -1,11 +1,11 @@
 #include "Contactos.h"
 #include "Comclase.h"
-#include <iostream>
+#include <iostreams>
 
 using std::endl;
 using std::cout;
 
-Comclase::Comclase(string name,string direccion,string correoElec,int numero,string claseConocieron):Contactos(name,direccion,correoElec,numero){
+Comclase::Comclase(string name,string correoElec,int numero,string claseConocieron):Contactos(name,direccion,correoElec,numero){
   this->departamento = departamento;
 }
 
