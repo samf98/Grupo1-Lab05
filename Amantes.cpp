@@ -6,7 +6,7 @@
 using std::string;
 using std::stringstream;
 
-Amantes::Amantes(string name,string correoElec,int numero,string horario):Contactos(name,direccion,correoElec,numero){
+Amantes::Amantes(string name,string correoElec,int numero,string horario):Contactos(name,correoElec,numero){
   this->horario = horario;
 }
 

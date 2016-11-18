@@ -6,7 +6,6 @@ using std::endl;
 using std::string;
 using std::stringstream;
 
-
 Pareja::Pareja(string name,string correoElec,int numero,string date):Contactos(name,correoElec,numero){
   this->date = date;
 }
