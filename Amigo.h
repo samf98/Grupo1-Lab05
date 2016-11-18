@@ -7,6 +7,7 @@ class Amigo : public Contactos{
 		int nivel;
 
 	public:
+		Amigo(int);
 		Amigo(string name,string direccion,string correoElec,int numero,int nivel);
 		virtual void imprimir();
 		int getNivel();

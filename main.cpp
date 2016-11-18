@@ -14,6 +14,8 @@ using namespace std;
 
 void eliminarContacto(vector<Contactos>,int);
 void escribirArchivo(vector<Contactos>);
+void escogerCategoria(vector<Contactos>);
+void liberarEspacio(vector<Contactos>);
 
 int main()
 {
@@ -36,7 +38,7 @@ void menu(vector<Contactos> contactos)
 			case 1:
 			{
 				cout<<"1-Amigo"<<endl<<"2-Pareja"<<endl;
-				cout<<"3-Compañero de Trabajo"<<endl<<"4-Compañero de Clase"<<endl<<"Familiar"<<endl<<"Amante"<<endl<<"Bloqueado"<<endl;
+				cout<<"3-Companero de Trabajo"<<endl<<"4-Companero de Clase"<<endl<<"Familiar"<<endl<<"Amante"<<endl<<"Bloqueado"<<endl;
 				int cat;
 				cin>>cat;
 				escogerCategoria(cat);
@@ -61,13 +63,13 @@ void menu(vector<Contactos> contactos)
 	}while(op == 0);
 }
 
-void escogerCategoria(int cat, Contactos )
+void escogerCategoria(int cat, vector<Contactos> contactos )
 {
 	string nombre;
 	string email;
 	string telefono;
 	cout<<"Ingrese su nombre: ";
-	cin>> nombre;
+	cin.getline(nombre,500,'n');
 	cout<< "Ingrese su email: ";
 	cin>>email;
 	cout<<"Ingrese su telefono: ";
@@ -112,8 +114,8 @@ void escogerCategoria(int cat, Contactos )
 				string departamento;
 				cout<<"Ingrese departamento en el que trabaja: ";
 				cin>>departamento;
-				Contactos* compañero_t = new Trabajo(departamento);
-				contactos.push_back(compañero_t);
+				Contactos* companero_t = new Trabajo(departamento);
+				contactos.push_back(companero_t);
 				break;
 			}
 
@@ -122,8 +124,8 @@ void escogerCategoria(int cat, Contactos )
 				stirng clase;
 				cout<<"Ingrese la clase: ";
 				cin>> clase;
-				Contactos* compañero_c = new ComClase(clase);
-				contactos.push_back(compañero_c);
+				Contactos* companero_c = new ComClase(clase);
+				contactos.push_back(companero_c);
 				break;
 			}
 
@@ -132,7 +134,7 @@ void escogerCategoria(int cat, Contactos )
 				string relacion;
 				cout<<"Ingrese la relación familiar: ";
 				cin>> relacion;
-				Compañeros* familia = new Familiares(relacion);
+				Companeros* familia = new Familiares(relacion);
 				contactos.push_back(familia);
 				break;
 			}
@@ -142,7 +144,7 @@ void escogerCategoria(int cat, Contactos )
 				string horario;
 				cout<<"Ingrese horas disponibles: ";
 				cin>> horario;
-				Compañeros* amantes = new Amantes(horario);
+				Companeros* amantes = new Amantes(horario);
 				contactos.push_back(amantes);
 				break;
 			}
@@ -154,7 +156,7 @@ void escogerCategoria(int cat, Contactos )
 				cin>> odio;
 				if(odio>=1&&odio<=100)
 				{
-					Compañeros* bloqueados = new Bloqueados(odio);
+					Companeros* bloqueados = new Bloqueados(odio);
 					contactos.push_back(bloqueados);
 				}
 				else
@@ -174,5 +176,78 @@ void eliminarContacto(vector<Contactos> contactos, int posicion)
 
 void escribirArchivo(vector<Contactos> contactos)
 {
-	cout<<"LOL"<<endl;
+	cout<<"Amigos:"<<endl;
+	Amigo amigos;
+	for (int i = 0; i < contactos.size(); ++i)
+	{
+		amigos = dynamic_cast<Amigo*>(contactos[i]) toString();
+
+		if(amigos!=null)
+			amigos -> toString();
+	}
+
+	cout<<"Pareja:"<<endl;
+	Paerja pareja;
+	for (int i = 0; i < contactos.size(); ++i)
+	{
+		pareja = dynamic_cast<Pareja*>(contactos[i]) toString();
+
+		if(pareja!=null)
+			pareja -> toString();
+	}
+
+	cout<<"Compañeros de Trabajo:"<<endl;
+	Trabajo trabajo;;
+	for (int i = 0; i < contactos.size(); ++i)
+	{
+		trabajo = dynamic_cast<Trabajo*>(contactos[i]) toString();
+
+		if(trabajo!=null)
+			trabajo -> toString();
+	}
+
+	cout<<"Compañeros de Clase:"<<endl;
+	ComClase comclase;
+	for (int i = 0; i < contactos.size(); ++i)
+	{
+		comclase = dynamic_cast<ComClase*>(contactos[i]) toString();
+
+		if(comclase!=null)
+			comclase -> toString();
+	}
+
+	cout<<"Familiares:"<<endl;
+	Familiares familiares;
+	for (int i = 0; i < contactos.size(); ++i)
+	{
+		familiares = dynamic_cast<Familiares*>(contactos[i]) toString();
+
+		if(familiares!=null)
+			familiares -> toString();
+	}
+
+	cout<<"Amantes:"<<endl;
+	Amantes amantes;
+	for (int i = 0; i < contactos.size(); ++i)
+	{
+		amantes = dynamic_cast<Amantes*>(contactos[i]) toString();
+
+		if(amantes!=null)
+			amantes -> toString();
+	}
+
+	cout<<"Bloqueados:"<<endl;
+	Bloqueados bloqueados;
+	for (int i = 0; i < contactos.size(); ++i)
+	{
+		bloqueados = dynamic_cast<Bloqueados*>(contactos[i]) toString();
+
+		if(bloqueados!=null)
+			bloqueados -> toString();
+	}
+}
+
+void liberarEspacio(vecto<Contactos> contactos)
+{
+	
 }
