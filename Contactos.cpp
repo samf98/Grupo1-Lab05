@@ -12,6 +12,11 @@ Contactos::Contactos(string name,string correoElec,int numero):name(name),correo
 Contactos::~Contactos(){
 }
 
+int Contactos::gettelefono()
+{
+	return numero;
+}
+
 string Contactos::toString()const{
 	stringstream ss;
 	ss << "Contactos: " << name << ", " << correoElec<< ", "<<numero;

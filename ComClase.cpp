@@ -1,21 +1,21 @@
 #include <sstream>
-#include "Comclase.h"
-#include <iostreams>
+#include "ComClase.h"
+#include <iostream>
 
 using std::endl;
 using std::cout;
 using std::string;
 using std::stringstream;
 
-Comclase::Comclase(string name,string correoElec,int numero,string claseConocieron):Contactos(name,correoElec,numero){
-  this->departamento = departamento;
+ComClase::ComClase(string name,string correoElec,int numero,string claseConocieron):Contactos(name,correoElec,numero){
+  this->claseConocieron = claseConocieron;
 }
 
-Comclase::~Comclase(){
+ComClase::~ComClase(){
 }
 
-string Comclase::tostring()const{
+string ComClase::toString()const{
 	stringstream ss;
-	ss << Contactos::tostring() << "Clase en la que se conocieron: " << endl;
+	ss << Contactos::toString() << "Clase en la que se conocieron: " << endl;
 	return ss.str();
 }

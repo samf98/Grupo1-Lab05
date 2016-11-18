@@ -1,5 +1,4 @@
-#ifndef COMCLASE_H
-#define COMCLASE_H
+#pragma once
 #include "Contactos.h"
 
 using std::string;
@@ -12,7 +11,5 @@ class ComClase : public Contactos{
 		ComClase(string name,string correoElec,int numero,string claseConocieron);
 
 		
-		virtual string tostring() const;
+		virtual string toString() const;
 };
-
-#endif

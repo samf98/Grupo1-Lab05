@@ -1,4 +1,3 @@
-#include "Contacto.h"
 #include "Bloqueados.h"
 
 #include <string>
@@ -7,11 +6,8 @@ using std::string;
 using std::stringstream;
 
 
-Amantes::Amantes(string name,string correoElec,int numero,int cantidad_odio):Contactos(name,correoElec,numero){
+Bloqueados::Bloqueados(string name,string correoElec,int numero,int cantidad_odio):Contactos(name,correoElec,numero){
   this->cantidad_odio = cantidad_odio;
-}
-
-Bloqueados::~Bloqueados(){
 }
 
 string Bloqueados::toString()const{

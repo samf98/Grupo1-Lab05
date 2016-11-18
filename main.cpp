@@ -70,8 +70,7 @@ void escogerCategoria(int cat, vector<Contactos*> contactos)
 	string email;
 	int telefono;
 	cout<<"Ingrese su nombre: ";
-	cin.ignore();
-	getline(cin,nombre, "/n");
+	cin>>nombre;
 	cout<< "Ingrese su email: ";
 	cin>>email;
 	cout<<"Ingrese su telefono: ";
@@ -179,70 +178,63 @@ void eliminarContacto(vector<Contactos*> contactos, int posicion)
 void escribirArchivo(vector<Contactos*> contactos)
 {
 	cout<<"Amigos:"<<endl;
-	Amigo* amigos;
 	for (int i = 0; i < contactos.size(); ++i)
 	{
-		amigos = dynamic_cast<Amigo*>(contactos.at(i))-> toString();
+		Amigo* amigos = dynamic_cast<Amigo*>(contactos.at(i));
 
 		if(amigos!=NULL)
 			amigos -> toString();
 	}
 
 	cout<<"Pareja:"<<endl;
-	Pareja* pareja;
 	for (int i = 0; i < contactos.size(); ++i)
 	{
-		pareja = dynamic_cast<Pareja*>(contactos.at(i))-> toString();
+		Pareja* pareja = dynamic_cast<Pareja*>(contactos.at(i));
 
 		if(pareja!=NULL)
 			pareja -> toString();
 	}
 
 	cout<<"Compañeros de Trabajo:"<<endl;
-	Trabajo* trabajo;;
 	for (int i = 0; i < contactos.size(); ++i)
 	{
-		trabajo = dynamic_cast<Trabajo*>(contactos.at(i))-> toString();
+		Trabajo* trabajo = dynamic_cast<Trabajo*>(contactos.at(i));
 
 		if(trabajo!=NULL)
 			trabajo -> toString();
 	}
 
 	cout<<"Compañeros de Clase:"<<endl;
-	ComClase* comclase;
 	for (int i = 0; i < contactos.size(); ++i)
 	{
-		comclase = dynamic_cast<ComClase*>(contactos.at(i))-> toString();
+		ComClase* comclase = dynamic_cast<ComClase*>(contactos.at(i));
 
 		if(comclase!=NULL)
 			comclase -> toString();
 	}
 
 	cout<<"Familiares:"<<endl;
-	Familiares* familiares;
 	for (int i = 0; i < contactos.size(); ++i)
 	{
-		familiares = dynamic_cast<Familiares*>(contactos.at(i))-> toString();
+		Familiares* familiares = dynamic_cast<Familiares*>(contactos.at(i));
 
 		if(familiares!=NULL)
 			familiares -> toString();
 	}
 
 	cout<<"Amantes:"<<endl;
-	Amantes* amantes;
 	for (int i = 0; i < contactos.size(); ++i)
 	{
-		amantes = dynamic_cast<Amantes*>(contactos.at(i))-> toString();
+		Amantes* amantes = dynamic_cast<Amantes*>(contactos.at(i));
 
 		if(amantes!=NULL)
 			amantes -> toString();
 	}
 
 	cout<<"Bloqueados:"<<endl;
-	Bloqueados* bloqueados;
 	for (int i = 0; i < contactos.size(); ++i)
 	{
-		bloqueados = dynamic_cast<Bloqueados*>(contactos.at(i))-> toString();
+		Bloqueados* bloqueados = dynamic_cast<Bloqueados*>(contactos.at(i));
 
 		if(bloqueados!=NULL)
 			bloqueados -> toString();
