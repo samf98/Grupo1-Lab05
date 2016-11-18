@@ -3,8 +3,9 @@
 using std::string;
 
 class Contactos{
-  private:	
-	string name,direccion;
+  protected:	
+	string name;
+	string direccion;
 	string correoElec;
 	int numero;
   public:
