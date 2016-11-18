@@ -7,5 +7,8 @@ class Amigo : public Categoria{
 		int nivel;
 
 	public:
-		void setNivel
-}
+		Amigo();
+		virtual void imprimir();
+		int getNivel();
+};
+#endif
