@@ -17,8 +17,8 @@ Trabajo::Trabajo(string name,string correoElec,int numero,string departamento):C
 Trabajo::~Trabajo(){
 }
 
-string Trabajo::tostring()const{
+string Trabajo::toString()const{
 	stringstream ss;
-	ss << Contactos::tostring() << "Departamento en el que trabajan: " << endl;
+	ss << Contactos::toString() << "Departamento en el que trabajan: " << endl;
 	return ss.str();
-
+}

@@ -16,9 +16,9 @@ Pareja::~Pareja(){
 }
 
 
-string Pareja::tostring()const{
+string Pareja::toString()const{
 	stringstream ss;
-	ss <<Contactos::tostring() << "Fecha en la que comenzaron a salir: " << endl;
+	ss <<Contactos::toString() << "Fecha en la que comenzaron a salir: " << endl;
 	return ss.str();
 }
 

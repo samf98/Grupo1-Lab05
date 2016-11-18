@@ -12,7 +12,7 @@ class Pareja : public Contactos{
 		Pareja(string name,string correoElec,int numero,string date);
 		//fecha en la que comenzaron a salir
 		virtual ~Pareja();
-		virtual string tostring() const;
+		virtual string toString() const;
 
 };
 #endif

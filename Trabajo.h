@@ -12,7 +12,7 @@ class Trabajo : public Contactos{
 		Trabajo(string name,string correoElec,int numero,string departamento);
 
 		virtual ~Trabajo();
-		virtual string tostring() const;
+		virtual string toString() const;
 };
 
 #endif

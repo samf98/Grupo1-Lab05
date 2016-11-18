@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include <string>
 #include <vector>
 #include "Contactos.h"
@@ -32,14 +33,14 @@ void menu(vector<Contactos*> contactos)
 	int op = 0;
 	do
 	{
-		cout<<"1-Agregar contacto"<<endl<<"2-Eliminar contacto"<<endl<<"3-Escribir archivo"<<endl;
+		cout<<"1-Agregar contacto"<<endl<<"2-Eliminar contacto"<<endl<<"3-Escribir archivo e imprimir"<<endl;
 		cin>>op;
 		switch(op)
 		{
 			case 1:
 			{
 				cout<<"1-Amigo"<<endl<<"2-Pareja"<<endl;
-				cout<<"3-Companero de Trabajo"<<endl<<"4-Companero de Clase"<<endl<<"Familiar"<<endl<<"Amante"<<endl<<"Bloqueado"<<endl;
+				cout<<"3-Companero de Trabajo"<<endl<<"4-Companero de Clase"<<endl<<"5-Familiar"<<endl<<"6-Amante"<<endl<<"7-Bloqueado"<<endl;
 				int cat;
 				cin>>cat;
 				escogerCategoria(cat,contactos);
@@ -57,10 +58,13 @@ void menu(vector<Contactos*> contactos)
 
 			case 3:
 			{
+
 				escribirArchivo(contactos);
 				break;
 			}
 		}
+		cout<<"Salir?[0=No||1==Si]"<<endl;
+		cin>>op;
 	}while(op == 0);
 }
 
@@ -177,13 +181,17 @@ void eliminarContacto(vector<Contactos*> contactos, int posicion)
 
 void escribirArchivo(vector<Contactos*> contactos)
 {
+	ofstream archivo;
+	archivo.open("Contactos.txt");
 	cout<<"Amigos:"<<endl;
 	for (int i = 0; i < contactos.size(); ++i)
 	{
 		Amigo* amigos = dynamic_cast<Amigo*>(contactos.at(i));
 
-		if(amigos!=NULL)
+		if(amigos!=NULL){
 			cout<<amigos -> toString()<<endl;
+			archivo << amigos-> toString()<<endl;
+		}
 	}
 
 	cout<<"Pareja:"<<endl;
@@ -191,8 +199,10 @@ void escribirArchivo(vector<Contactos*> contactos)
 	{
 		Pareja* pareja = dynamic_cast<Pareja*>(contactos.at(i));
 
-		if(pareja!=NULL)
+		if(pareja!=NULL){
 			cout<<pareja -> toString()<<endl;
+			archivo << pareja-> toString()<<endl;
+		}
 	}
 
 	cout<<"Compañeros de Trabajo:"<<endl;
@@ -200,8 +210,10 @@ void escribirArchivo(vector<Contactos*> contactos)
 	{
 		Trabajo* trabajo = dynamic_cast<Trabajo*>(contactos.at(i));
 
-		if(trabajo!=NULL)
+		if(trabajo!=NULL){
 			cout<<trabajo -> toString()<<endl;
+			archivo << trabajo-> toString()<<endl;
+		}
 	}
 
 	cout<<"Compañeros de Clase:"<<endl;
@@ -209,8 +221,10 @@ void escribirArchivo(vector<Contactos*> contactos)
 	{
 		ComClase* comclase = dynamic_cast<ComClase*>(contactos.at(i));
 
-		if(comclase!=NULL)
+		if(comclase!=NULL){
 			cout<<comclase -> toString()<<endl;
+			archivo << comclase-> toString()<<endl;
+		}
 	}
 
 	cout<<"Familiares:"<<endl;
@@ -218,8 +232,10 @@ void escribirArchivo(vector<Contactos*> contactos)
 	{
 		Familiares* familiares = dynamic_cast<Familiares*>(contactos.at(i));
 
-		if(familiares!=NULL)
+		if(familiares!=NULL){
 			cout<<familiares -> toString()<<endl;
+			archivo << familiares-> toString()<<endl;
+		}
 	}
 
 	cout<<"Amantes:"<<endl;
@@ -227,8 +243,10 @@ void escribirArchivo(vector<Contactos*> contactos)
 	{
 		Amantes* amantes = dynamic_cast<Amantes*>(contactos.at(i));
 
-		if(amantes!=NULL)
+		if(amantes!=NULL){
 			cout<< amantes -> toString()<<endl;
+			archivo << amantes-> toString()<<endl;
+		}
 	}
 
 	cout<<"Bloqueados:"<<endl;
@@ -236,8 +254,10 @@ void escribirArchivo(vector<Contactos*> contactos)
 	{
 		Bloqueados* bloqueados = dynamic_cast<Bloqueados*>(contactos.at(i));
 
-		if(bloqueados!=NULL)
-			cout<<bloqueados -> toString()<<endl;
+		if(bloqueados!=NULL){
+					cout<<bloqueados -> toString()<<endl;
+					archivo <<bloqueados -> toString()<<endl;
+		}
 	}
 }
 
