@@ -1,7 +1,7 @@
 #pragma once
 #include <sstream>
 
-#include "Contacto.h"
+#include "Contactos.h"
 
 using std::stringstream;
 

@@ -1,7 +1,7 @@
 #pragma once
 #include <sstream>
 
-#include "Contacto.h"
+#include "Contactos.h"
 
 using std::stringstream;
 
@@ -9,7 +9,7 @@ class Familiares: public Contactos{
 	private:
 		string relacionFam;
 	public:
-		Familiares(string relacionFam,string name,string direccion,string correoElec,int numero):Contactos(name,direccion,correoElec,numero),name(name),direccion(direccion), correoElec(correoElec), numero(numero);
+		Familiares(string name,string direccion,string correoElec,int numero,string relacionFam);
 
 		virtual string toString()const;
 };
