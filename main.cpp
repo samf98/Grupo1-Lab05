@@ -15,6 +15,7 @@ using namespace std;
 void eliminarContacto(vector<Contactos>,int);
 void escribirArchivo(vector<Contactos>);
 void escogerCategoria(vector<Contactos>);
+void liberarEspacio(vector<Contactos>);
 
 int main()
 {
@@ -180,5 +181,73 @@ void escribirArchivo(vector<Contactos> contactos)
 	for (int i = 0; i < contactos.size(); ++i)
 	{
 		amigos = dynamic_cast<Amigo*>(contactos[i]) toString();
+
+		if(amigos!=null)
+			amigos -> toString();
 	}
+
+	cout<<"Pareja:"<<endl;
+	Paerja pareja;
+	for (int i = 0; i < contactos.size(); ++i)
+	{
+		pareja = dynamic_cast<Pareja*>(contactos[i]) toString();
+
+		if(pareja!=null)
+			pareja -> toString();
+	}
+
+	cout<<"Compañeros de Trabajo:"<<endl;
+	Trabajo trabajo;;
+	for (int i = 0; i < contactos.size(); ++i)
+	{
+		trabajo = dynamic_cast<Trabajo*>(contactos[i]) toString();
+
+		if(trabajo!=null)
+			trabajo -> toString();
+	}
+
+	cout<<"Compañeros de Clase:"<<endl;
+	ComClase comclase;
+	for (int i = 0; i < contactos.size(); ++i)
+	{
+		comclase = dynamic_cast<ComClase*>(contactos[i]) toString();
+
+		if(comclase!=null)
+			comclase -> toString();
+	}
+
+	cout<<"Familiares:"<<endl;
+	Familiares familiares;
+	for (int i = 0; i < contactos.size(); ++i)
+	{
+		familiares = dynamic_cast<Familiares*>(contactos[i]) toString();
+
+		if(familiares!=null)
+			familiares -> toString();
+	}
+
+	cout<<"Amantes:"<<endl;
+	Amantes amantes;
+	for (int i = 0; i < contactos.size(); ++i)
+	{
+		amantes = dynamic_cast<Amantes*>(contactos[i]) toString();
+
+		if(amantes!=null)
+			amantes -> toString();
+	}
+
+	cout<<"Bloqueados:"<<endl;
+	Bloqueados bloqueados;
+	for (int i = 0; i < contactos.size(); ++i)
+	{
+		bloqueados = dynamic_cast<Bloqueados*>(contactos[i]) toString();
+
+		if(bloqueados!=null)
+			bloqueados -> toString();
+	}
+}
+
+void liberarEspacio(vecto<Contactos> contactos)
+{
+	
 }
