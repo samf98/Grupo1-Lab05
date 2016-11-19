@@ -19,5 +19,7 @@ Amigo::~Amigo(){
 string Amigo::tostring()const{
 	stringstream ss;
 	ss <<Contactos::toString()<< "Nivel de amigo: " << nivel;
+        cout <<Contactos::toString()<< "Nivel de amigo: " << nivel;
+
 	return ss.str();
 }
